@@ -17,17 +17,17 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
   const clear = () => { setQuery(""); inputRef.current?.focus(); };
 
   return (
-    <div className="space-y-3 w-full" style={{ maxWidth: "560px" }}>
-      <div className="flex gap-2">
+    <div className="space-y-4 w-full">
+      <div className="flex gap-3">
         <div
-          className="flex-1 flex items-center gap-2.5 px-4 py-3 rounded-xl transition-all"
+          className="flex-1 flex items-center gap-3 px-5 py-4 rounded-xl transition-all"
           style={{
             border: `2px solid ${focused ? "var(--c-blue)" : "var(--c-border)"}`,
             background: "var(--c-bg)",
             boxShadow: focused ? "0 0 0 4px #dbeafe" : "none",
           }}
         >
-          <svg className="w-4 h-4 flex-shrink-0" style={{ color: "var(--c-ink-4)" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-5 h-5 flex-shrink-0" style={{ color: "var(--c-ink-4)" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -38,13 +38,13 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder="키워드를 입력하세요 (예: 인공지능, 반도체, 주식...)"
-            className="flex-1 text-sm outline-none bg-transparent"
+            className="flex-1 text-base outline-none bg-transparent"
             style={{ color: "var(--c-ink)", caretColor: "var(--c-blue)" }}
             disabled={isLoading}
           />
           {query && (
             <button onClick={clear} tabIndex={-1} style={{ color: "var(--c-ink-4)" }}>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -53,15 +53,15 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
         <button
           onClick={submit}
           disabled={isLoading || !query.trim()}
-          className="px-6 py-3 rounded-xl text-sm font-bold transition-all hover:brightness-110 active:brightness-90 active:scale-95"
+          className="px-8 py-4 rounded-xl text-base font-bold transition-all hover:brightness-110 active:brightness-90 active:scale-95"
           style={{
             background: "var(--c-blue)",
             color: "#fff",
             opacity: isLoading || !query.trim() ? 0.4 : 1,
             cursor: isLoading || !query.trim() ? "not-allowed" : "pointer",
-            minWidth: "80px",
+            minWidth: "96px",
             transition: "opacity 0.15s, filter 0.15s, transform 0.1s, box-shadow 0.15s",
-            boxShadow: "0 2px 8px rgba(26,86,219,0.25)",
+            boxShadow: "0 2px 10px rgba(26,86,219,0.3)",
           }}
         >
           {isLoading
@@ -78,7 +78,7 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
             key={btn.period}
             onClick={() => onSearch(query.trim(), btn.period)}
             disabled={isLoading}
-            className="btn-ghost text-xs font-semibold px-3.5 py-1.5 rounded-full"
+            className="btn-ghost text-sm font-semibold px-4 py-2 rounded-full"
             style={{ border: "1px solid var(--c-border)", color: "var(--c-ink-2)", background: "var(--c-bg)" }}
           >
             {btn.label}

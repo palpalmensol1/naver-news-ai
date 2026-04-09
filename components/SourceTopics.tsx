@@ -21,7 +21,7 @@ function SourceCard({ s }: { s: SourceTopic }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: c.dot }} />
-          <span className="text-sm font-bold" style={{ color: "var(--c-ink)" }}>{s.source}</span>
+          <span className="text-base font-bold" style={{ color: "var(--c-ink)" }}>{s.source}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <span
@@ -33,9 +33,9 @@ function SourceCard({ s }: { s: SourceTopic }) {
           <span className="text-[10px] tabular-nums" style={{ color: "var(--c-ink-4)" }}>{s.articleCount}건</span>
         </div>
       </div>
-      <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "var(--c-ink-3)" }}>{s.angle}</p>
-      <div className="pt-2" style={{ borderTop: "1px solid var(--c-border)" }}>
-        <p className="text-xs font-semibold line-clamp-1" style={{ color: "var(--c-ink-2)" }}>{s.topHeadline}</p>
+      <p className="text-sm leading-relaxed line-clamp-2" style={{ color: "var(--c-ink-3)" }}>{s.angle}</p>
+      <div className="pt-2.5" style={{ borderTop: "1px solid var(--c-border)" }}>
+        <p className="text-sm font-semibold line-clamp-1" style={{ color: "var(--c-ink-2)" }}>{s.topHeadline}</p>
       </div>
     </div>
   );
@@ -76,7 +76,7 @@ export default function SourceTopics({ sourceAnalysis }: { sourceAnalysis: Sourc
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sourceAnalysis.sources.map((s) => <SourceCard key={s.source} s={s} />)}
       </div>
     </div>

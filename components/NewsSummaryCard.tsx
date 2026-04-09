@@ -37,7 +37,7 @@ export default function NewsSummaryCard({ analysis }: {
           <p className="label">AI 요약</p>
           <CategoryBadge category={analysis.category} size="sm" />
         </div>
-        <p className="text-[15px] leading-[1.8]" style={{ color: "var(--c-ink)" }}>
+        <p className="text-base leading-[1.9]" style={{ color: "var(--c-ink)" }}>
           {analysis.summary}
         </p>
       </div>
@@ -88,14 +88,14 @@ export default function NewsSummaryCard({ analysis }: {
                 {i + 1}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold line-clamp-1 transition-colors" style={{ color: "var(--c-ink)" }}>
+                <p className="text-base font-semibold line-clamp-1 transition-colors" style={{ color: "var(--c-ink)" }}>
                   {article.title}
                 </p>
-                <p className="text-xs mt-1 line-clamp-2 leading-relaxed" style={{ color: "var(--c-ink-3)" }}>
+                <p className="text-sm mt-1.5 line-clamp-2 leading-relaxed" style={{ color: "var(--c-ink-3)" }}>
                   {article.summary}
                 </p>
                 {article.pubDate && (
-                  <span className="text-[10px] mt-1.5 block tabular-nums" style={{ color: "var(--c-ink-4)" }}>
+                  <span className="text-xs mt-2 block tabular-nums" style={{ color: "var(--c-ink-4)" }}>
                     {formatDate(article.pubDate)}
                   </span>
                 )}
