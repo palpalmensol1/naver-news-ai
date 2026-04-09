@@ -53,13 +53,15 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
         <button
           onClick={submit}
           disabled={isLoading || !query.trim()}
-          className="px-6 py-3 rounded-xl text-sm font-bold transition-all"
+          className="px-6 py-3 rounded-xl text-sm font-bold transition-all hover:brightness-110 active:brightness-90 active:scale-95"
           style={{
             background: "var(--c-blue)",
             color: "#fff",
             opacity: isLoading || !query.trim() ? 0.4 : 1,
             cursor: isLoading || !query.trim() ? "not-allowed" : "pointer",
             minWidth: "80px",
+            transition: "opacity 0.15s, filter 0.15s, transform 0.1s, box-shadow 0.15s",
+            boxShadow: "0 2px 8px rgba(26,86,219,0.25)",
           }}
         >
           {isLoading
@@ -76,20 +78,8 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
             key={btn.period}
             onClick={() => onSearch(query.trim(), btn.period)}
             disabled={isLoading}
-            className="text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors"
+            className="btn-ghost text-xs font-semibold px-3.5 py-1.5 rounded-full"
             style={{ border: "1px solid var(--c-border)", color: "var(--c-ink-2)", background: "var(--c-bg)" }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLButtonElement;
-              el.style.borderColor = "var(--c-blue)";
-              el.style.color = "var(--c-blue)";
-              el.style.background = "var(--c-blue-soft)";
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLButtonElement;
-              el.style.borderColor = "var(--c-border)";
-              el.style.color = "var(--c-ink-2)";
-              el.style.background = "var(--c-bg)";
-            }}
           >
             {btn.label}
           </button>

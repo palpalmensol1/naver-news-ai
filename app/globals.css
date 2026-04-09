@@ -48,17 +48,32 @@
   --sp-16: 64px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--c-bg);
   color: var(--c-ink);
-  font-family: var(--font-geist-sans), "Apple SD Gothic Neo", -apple-system, "Segoe UI", sans-serif;
+  font-family: "돋움", "Dotum", "Apple SD Gothic Neo", -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+}
+
+/* ── 버튼 호버 공통 ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--c-blue-soft) !important;
+  color: var(--c-blue) !important;
+  border-color: var(--c-blue) !important;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.12);
+}
+.btn-ghost:active:not(:disabled) {
+  background: #dbeafe !important;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.2);
 }
 
 /* ── 공통 타이포 유틸 ── */

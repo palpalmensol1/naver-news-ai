@@ -139,18 +139,8 @@ export default function Home() {
                   <button
                     key={kw}
                     onClick={() => search(kw)}
-                    className="text-sm font-medium px-4 py-1.5 rounded-full transition-colors"
+                    className="btn-ghost text-sm font-medium px-4 py-1.5 rounded-full"
                     style={{ border: "1px solid var(--c-border)", color: "var(--c-ink-2)", background: "var(--c-bg)" }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--c-blue)";
-                      (e.currentTarget as HTMLButtonElement).style.color = "var(--c-blue)";
-                      (e.currentTarget as HTMLButtonElement).style.background = "var(--c-blue-soft)";
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--c-border)";
-                      (e.currentTarget as HTMLButtonElement).style.color = "var(--c-ink-2)";
-                      (e.currentTarget as HTMLButtonElement).style.background = "var(--c-bg)";
-                    }}
                   >
                     {kw}
                   </button>
