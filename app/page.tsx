@@ -109,20 +109,25 @@ export default function Home() {
             </p>
 
             {/* 기능 목록 */}
-            <div className="space-y-0" style={{ border: "1px solid var(--c-border)", borderRadius: "12px", overflow: "hidden" }}>
+            <div className="space-y-0" style={{ border: "1px solid var(--c-border)", borderRadius: "14px", overflow: "hidden" }}>
               {FEATURES.map((f, i) => (
                 <div
                   key={f.n}
-                  className={`fade-up d${i + 1} flex items-start gap-3 px-4 py-3.5`}
+                  className={`fade-up d${i + 1} flex items-center gap-5 px-5 py-4`}
                   style={{
                     background: "var(--c-bg)",
                     borderBottom: i < FEATURES.length - 1 ? "1px solid var(--c-border)" : "none",
                   }}
                 >
-                  <p className="label mt-0.5 w-6 flex-shrink-0" style={{ color: "var(--c-blue)" }}>{f.n}</p>
+                  <p
+                    className="flex-shrink-0 font-black tabular-nums"
+                    style={{ fontSize: "22px", lineHeight: 1, color: "var(--c-blue)", width: "36px" }}
+                  >
+                    {f.n}
+                  </p>
                   <div>
-                    <p className="text-sm font-bold" style={{ color: "var(--c-ink)" }}>{f.title}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "var(--c-ink-3)" }}>{f.desc}</p>
+                    <p className="text-base font-bold" style={{ color: "var(--c-ink)" }}>{f.title}</p>
+                    <p className="text-sm mt-0.5" style={{ color: "var(--c-ink-3)" }}>{f.desc}</p>
                   </div>
                 </div>
               ))}
@@ -130,7 +135,7 @@ export default function Home() {
           </aside>
 
           {/* ── 우측: 검색 + 결과 ── */}
-          <main className="flex-1 min-w-0">
+          <main className="flex-1 min-w-0 pt-32">
 
             {/* 검색창 */}
             <div className="mb-10">
