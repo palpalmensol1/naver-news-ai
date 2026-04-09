@@ -135,7 +135,7 @@ export default function Home() {
           </aside>
 
           {/* ── 우측: 검색 + 결과 ── */}
-          <main className="flex-1 min-w-0 pt-32">
+          <main className="flex-1 min-w-0 pt-11">
 
             {/* 검색창 */}
             <div className="mb-10">
